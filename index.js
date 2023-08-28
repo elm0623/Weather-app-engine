@@ -36,6 +36,15 @@ function showWeatherClimate(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
+  document
+    .querySelector("#icon")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+  document
+    .querySelector("#icon")
+    .setAttribute("alt", response.data.weather[0].description);
 }
 function searchCity(city) {
   let apiKey = "8cd9be374c7c96c39a9fe73f4bf2f055";
@@ -53,6 +62,7 @@ function findButton(event) {
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
+let iconElement = document.querySelector("#icon");
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", findButton);

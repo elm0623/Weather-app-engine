@@ -79,7 +79,7 @@ let celsiusTemperature = null;
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", findButton);
 
-searchCity("Hawaii");
+searchCity("Paris");
 
 function searchLocation(position) {
   let apiKey = "8cd9be374c7c96c39a9fe73f4bf2f055";
